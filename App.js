@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text } from 'react-native'
+import React from 'react'
+// import ViewFood from './screens/ViewFood'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AddDeals from './AddDeals';
+import ViewDeals from './ViewDeals';
 
-export default function App() {
+// import EditFood from './screens/EditFood';
+
+const Stack = createNativeStackNavigator();
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <NavigationContainer >
+      <Stack.Navigator>
+        <Stack.Screen name="AddDeals" component={AddDeals} />
+        <Stack.Screen name="ViewDeals" component={ViewDeals} />
+        {/* <Stack.Screen name="ViewFood" component={ViewFood} />
+        <Stack.Screen name="EditFood" component={EditFood} /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
