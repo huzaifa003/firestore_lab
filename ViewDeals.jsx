@@ -28,14 +28,21 @@ export default ViewDeals = () => {
             <Text style={styles.price}>${item.price}</Text>
             <Button
                 title="Edit"
-                onPress={() => handleEditDeal(item.id)}
+                onPress={() => handleEditDeal(item.id, item.name, item.price, item.description)}
                 style={styles.editButton}
             />
         </View>
     );
 
-    const handleEditDeal = (dealId) => {
+    const handleEditDeal = (dealId, dealName, dealPrice, dealDescription) => {
         console.log('Edit deal with id: ', dealId);
+
+        navigation.navigate('EditDeals', {
+            id: dealId,
+            name: dealName,
+            price: dealPrice,
+            description: dealDescription,
+        });
         // Handle edit deal logic here
         // You can navigate to the edit screen or perform any other action
     };

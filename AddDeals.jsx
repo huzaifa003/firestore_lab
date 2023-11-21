@@ -36,7 +36,7 @@ export default function AddDeals() {
             setPrice('');
             setDescription('');
 
-            navigation.navigate('ViewDeals');
+            navigation.reset({index: 0, routes: [{name: 'ViewDeals'}]})
         } catch (error) {
             console.error('Error adding document: ', error);
         }

@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import AddDeals from './AddDeals';
 import ViewDeals from './ViewDeals';
+import EditDeals from './EditDeals';
 
 // import EditFood from './screens/EditFood';
 
@@ -14,7 +15,11 @@ const App = () => {
     <NavigationContainer >
       <Stack.Navigator>
         <Stack.Screen name="AddDeals" component={AddDeals} />
-        <Stack.Screen name="ViewDeals" component={ViewDeals} />
+        <Stack.Screen name="ViewDeals" component={ViewDeals} options={{
+          headerShown: false
+        
+        }} />
+        <Stack.Screen name="EditDeals" component={EditDeals} />
         {/* <Stack.Screen name="ViewFood" component={ViewFood} />
         <Stack.Screen name="EditFood" component={EditFood} /> */}
       </Stack.Navigator>
